@@ -12,17 +12,26 @@ Here are working versions of the app:
 
 For this assignment you'll be using the Open Weather Data API. In order to use it, please follow these steps:
 
-1. Sign up for a free [Open Weather Map](https://home.openweathermap.org/users/sign_up) account!
-2. Once you've signed up, you're given an [API key](https://home.openweathermap.org/api_keys). Copy that API key and keep track of it somewhere!
-3. Test the url in browswer to verify that your key works. 
+1. Fork and clone this repo.
+2. Sign up for a free [Open Weather Map](https://home.openweathermap.org/users/sign_up) account!
+3. Once you've signed up, you're given an [API key](https://home.openweathermap.org/api_keys). Copy that API key and keep track of it somewhere!
+4. Test the url in browswer to verify that your key works. 
 
 ```
 api.openweathermap.org/data/2.5/weather?zip={ZIP CODE},us&units=imperial&appid={API KEY}
 ```
 
-Once your key works, set up a static site in this repository with an HTML page, as well as files for CSS and JS. 
+5. Once you know your key works, get an Express server running.
+    - `cd` into your cloned directory
+    - `npm init` or `npm init -y` for a faster start up
+    - `touch` and `mkdir` the files and directories you need for a Liquid-Express app. Make sure to include a .env and .gitignore. 
+    You won't need a `models` directory or any of the Mongo connection code for this deliverable.
+    - Install your dependencies: express, liquid-express-views, dotenv
+    - In your `server.js` make sure to include your dependencies and get the server listening (ports 3000 and 8000 are used frequently)
+    - Connect your routes to `server.js` (Be mindful of exporting and your file paths)
 
-## Your page should have:
+
+## Your view(s) should have:
 - An input field for a user to enter a zip code
 - A submit button
 - When the submit button is clicked:
@@ -50,4 +59,4 @@ Here are some zip codes to test!
 - Add a five day forecast with their [5 day forecast endpoint](https://openweathermap.org/forecast5)
 - Include the sunrise and sunset times (hint: maybe [Moment.js](https://momentjs.com/) will be helpful!) and some information about humidity, atmospheric pressure, etc.
 - Use CSS Animation, images, etc. (think weather app)
-- Leverage flexbox and use media queries to build a mobile version
+- Leverage Bootstrap to build a mobile version
