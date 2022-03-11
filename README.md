@@ -15,7 +15,8 @@ For this assignment you'll be using the Open Weather Data API. In order to use i
 1. Fork and clone this repo.
 2. Sign up for a free [Open Weather Map](https://home.openweathermap.org/users/sign_up) account!
 3. Once you've signed up, you're given an [API key](https://home.openweathermap.org/api_keys). Copy that API key and keep track of it somewhere!
-4. Test the url in browswer to verify that your key works. 
+(Your .env is a good place)
+4. Test the url in browser to verify that your key works. 
 
 ```
 api.openweathermap.org/data/2.5/weather?zip={ZIP CODE},us&units=imperial&appid={API KEY}
@@ -35,7 +36,7 @@ api.openweathermap.org/data/2.5/weather?zip={ZIP CODE},us&units=imperial&appid={
 - An input field for a user to enter a zip code
 - A submit button
 - When the submit button is clicked:
-    - A GET request should fetch the weather data from the API
+    - A GET request should hit a route that fetches and returns the weather data from the API
     - The following data should be rendered on the page:
         - City name
         - Current temperature
