@@ -1,13 +1,23 @@
 {% layout 'layout.liquid' %}
 
 {% block content %}
-<div class="container">
-    
-        
+<div class="container">   
     <div class="card">
-        <legend>Here is the weather for {{weatherData.name}}</legend>
-
-    </div>   
-        
+        <legend>Weather for {{weatherData.name}}</legend>
+        <p>{{weatherData.weather[0].main}}</p>
+        {% if weatherData.main.temp > 90 %}
+            <p id="tooHot">Current temp {{weatherData.main.temp}}</p>
+        {% elsif weatherData.main.temp < 40 %}
+            <p id="tooCold">Current temp {{weatherData.main.temp}}</p>
+        {% else %}
+            <p>Current temp {{weatherData.main.temp}}</p>
+        {% endif %}
+        <p>The low temp are going to be in the {{weatherData.main.temp_min}}</p>
+        <p>The high temp are going to be in the {{weatherData.main.temp_max}}</p>
+        <p>Temp feels like {{weatherData.main.feels_like}}</p>
+        <p>With {{weatherData.main.humidity}}% humidity</p>
+        <p>And {{weatherData.main.pressure}} hPa</p>
+    </div>      
+    <a href="/weather">Back to search</a>
 </div>
 {% endblock %}
