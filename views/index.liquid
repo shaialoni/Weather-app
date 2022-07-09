@@ -1,0 +1,24 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container">
+    <form action="/weather" method="POST">
+        <fieldset>
+           <legend>Check the weather</legend>
+           <input 
+                type="text" class="form-control" 
+                name="zipcode"
+                placeholder="zipcode"    
+            >
+        </fieldset>
+        <div class="btn-group">
+            <input 
+                type="submit" 
+                value="GO!"
+                class="btn btn-success"
+            >
+        </div>
+    </form>
+
+</div>
+{% endblock %}

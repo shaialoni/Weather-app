@@ -1,0 +1,23 @@
+{
+  "name": "open-weather-api-deliverable",
+  "version": "1.0.0",
+  "description": "![ui](https://media.git.generalassemb.ly/user/6387/files/ac9a086c-9fd8-11e8-9e0d-52091e56436b)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/shaialoni/open-weather-api-deliverable.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "liquid-express-views": "^1.0.8",
+    "node-fetch": "^2.6.7"
+  }
+}
