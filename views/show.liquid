@@ -3,21 +3,30 @@
 {% block content %}
 <div class="container">   
     <div class="card">
-        <legend>Weather for {{weatherData.name}}</legend>
-        <p>{{weatherData.weather[0].main}}</p>
-        {% if weatherData.main.temp > 90 %}
-            <p id="tooHot">Current temp {{weatherData.main.temp}}</p>
-        {% elsif weatherData.main.temp < 40 %}
-            <p id="tooCold">Current temp {{weatherData.main.temp}}</p>
-        {% else %}
-            <p>Current temp {{weatherData.main.temp}}</p>
+        {% if weatherData.weather[0].main == 'Clear' %}
+            <img src="/images/clear.png" id="weather">
+        {% elsif weatherData.weather[0].main == 'Rain' %}
+            <img src="/images/rain.png" id="weather">
+        {% elsif weatherData.weather[0].main == 'Clouds' %}
+            <img src="/images/clouds.png" id="weather">
+        {% elsif weatherData.weather[0].main == 'Partly cloudy' %}
+            <img src="/images/partlyCloudy.png" id="weather">
         {% endif %}
-        <p>The low temp are going to be in the {{weatherData.main.temp_min}}</p>
-        <p>The high temp are going to be in the {{weatherData.main.temp_max}}</p>
-        <p>Temp feels like {{weatherData.main.feels_like}}</p>
-        <p>With {{weatherData.main.humidity}}% humidity</p>
-        <p>And {{weatherData.main.pressure}} hPa</p>
+        <legend>Weather for {{weatherData.name}}</legend>
+        <h5>{{weatherData.weather[0].main}}</h5>
+        {% if weatherData.main.temp > 90 %}
+            <p id="tooHot">Current temp: {{weatherData.main.temp}}°</p>
+        {% elsif weatherData.main.temp < 40 %}
+            <p id="tooCold">Current temp: {{weatherData.main.temp}}°</p>
+        {% else %}
+            <p>Current temp: {{weatherData.main.temp}}°F</p>
+        {% endif %}
+        <p>Lows of: {{weatherData.main.temp_min}}°F</p>
+        <p>Highs of: {{weatherData.main.temp_max}}°F</p>
+        <p>Feels like: {{weatherData.main.feels_like}}°F</p>
+        <p>Humidity: {{weatherData.main.humidity}}%</p>
+        <p>Pressure: {{weatherData.main.pressure}} hPa</p>
     </div>      
-    <a href="/weather">Back to search</a>
+    <a href="/weather" class="btn btn-primary">back to Search</a>
 </div>
 {% endblock %}
