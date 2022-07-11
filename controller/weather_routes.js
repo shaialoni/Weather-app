@@ -18,7 +18,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     // get the zipcode from the req.body and embed it in the API request URL
     const zip = req.body.zipcode
-    const APIrequestUrl = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=fcacd7488c5d8bb24fdc556ef3eb2d7f`
+    const APIKEY = process.env.APIKEY
+    const APIrequestUrl = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=${APIKEY}`
     
     //send the fetch request to the weather API
    fetch(APIrequestUrl)
@@ -33,8 +34,7 @@ router.post('/', (req, res) => {
             weatherData.main.humidity = Math.floor(weatherData.main.humidity)
             weatherData.main.pressure = Math.floor(weatherData.main.pressure)
             //then render the show page with the correct weather iformation
-            console.log(weatherData.weather[0].main)
-            console.log(weatherData.weather[0].description)
+            // console.log(weatherData.weather[0].icon)
             res.render('show', {weatherData})
             } else {
             //otherwise display the error with a link to get back to the main page
