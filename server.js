@@ -28,7 +28,8 @@ app.use('/weather', weatherRoutes)
 
 //localhost:3000/
 app.get('/', (req, res) => {
-	res.send(`<a href="/weather/">Let's look up some weather</a>`)
+	// res.send(`<a href="/weather/">Let's look up some weather</a>`)
+    res.redirect('/weather')
 })
 
 const PORT = process.env.PORT
